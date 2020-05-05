@@ -6,3 +6,4 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 2) Jewels and Stones  
 * 3) Ransom Note  
 * 4) Number Complement  
+* 5) First Unique Character in a String  
