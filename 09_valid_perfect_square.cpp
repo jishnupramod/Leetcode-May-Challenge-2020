@@ -13,6 +13,8 @@ Input: 14
 Output: false
 */
 
+
+// Using Binary Search method
 class Solution {
 public:
     bool isPerfectSquare(int num) {
@@ -29,6 +31,33 @@ public:
             else
                 l = mid + 1;
         }
+        return false;
+    }
+};
+
+// Using Babylonian method
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        int temp = num;
+        int digits = 0;
+        while (temp) {
+            temp /= 10;
+            ++digits;
+        }
+        digits = digits/2+1;
+        double guess = 1;
+        for (; digits > 1; --digits)
+            guess *= 10;
+        int prev = 0;
+        while (prev != (int)guess) {
+            prev = (int)guess;
+            guess = 0.5 * (guess + num/guess);
+        }
+        if (prev == (double)num/prev)
+            return true;
+        if ((prev+1) == (double)num/(prev+1))
+            return true;
         return false;
     }
 };
