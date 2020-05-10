@@ -43,6 +43,7 @@ trust[i][0] != trust[i][1]
 1 <= trust[i][0], trust[i][1] <= N
 */
 
+
 class Solution {
 public:
     int findJudge(int N, vector<vector<int>>& trust) {
@@ -60,5 +61,29 @@ public:
         if (judge and cnts[judge] == N-1)
             return judge;
         return -1;
+    }
+};
+
+// Using indegree-outdegree concept
+class Solution {
+public:
+    int findJudge(int N, vector<vector<int>>& trust) {
+        // int ins[N+1], outs[N+1];
+        // memset(ins, 0, sizeof(ins));
+        // memset(outs, 0, sizeof(outs));
+        if (trust.size() < N-1)
+            return -1;
+
+        vector<int> trustLvl(N+1, 0);
+        int judge = 1;
+        for (vector<int> pair : trust) {
+            trustLvl[pair[0]] = -1;
+            if (trustLvl[pair[1]] != -1) {
+                trustLvl[pair[1]]++;
+                if (trustLvl[pair[1]] == N-1)
+                    judge = pair[1];
+            }
+        }
+        return trustLvl[judge] == N-1 ? judge : -1;
     }
 };
