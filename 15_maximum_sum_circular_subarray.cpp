@@ -44,7 +44,7 @@ Note:
 
 class Solution {
 private:
-    int normalMaxArray(vector<int>& A) {
+    int maxKad(vector<int> A) {
         int sum = 0, mxm = INT_MIN;
         for (int i : A) {
             sum = max(i, sum+i);
@@ -52,24 +52,21 @@ private:
         }
         return mxm;
     }
+
+    int minKad(vector<int> A) {
+        int sum = 0, mnm = INT_MAX;
+        for (int i : A) {
+            sum = min(i, sum + i);
+            mnm = min(mnm, sum);
+        }
+        return mnm;
+    }
 public:
     int maxSubarraySumCircular(vector<int>& A) {
-        int max1 = normalMaxArray(A);
-        int flag = 0, n = A.size(), sum = 0;
-        for (int i : A) {
-            if (i >= 0) {
-                flag = 1;
-                break;
-            }
-        }
-        if (flag == 0)
-            return max1;
-        for (int i=0; i<n; ++i) {
-            sum += A[i];
-            A[i] = -A[i];
-        }
-        int max2 = normalMaxArray(A);
-        max2 += sum;
-        return max(max1, max2);
+        int mx1 = maxKad(A);
+        int sum = accumulate(A.begin(), A.end(), 0);
+        int mn = minKad(A);
+        int mx2 = sum - mn;
+        return mx2 == 0 ? mx1 : max(mx1, mx2);
     }
 };
