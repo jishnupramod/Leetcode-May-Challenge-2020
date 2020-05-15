@@ -15,3 +15,5 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 11) Flood Fill  
 * 12) Single Element in a Sorted Array  
 * 13) Remove K Digits  
+* 14) Implement Trie (Prefix Tree)  
+* 15) Maximum Sum Circular Subarray  
