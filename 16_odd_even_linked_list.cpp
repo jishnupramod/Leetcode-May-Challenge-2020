@@ -28,6 +28,9 @@ The first node is considered odd, the second node even and so on ...
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+
+// Solution By saving the nodes at even positions (Multiple pointer solution)
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
@@ -50,6 +53,26 @@ public:
             odd = odd->next;
         }
         temp->next = nullptr;
+        return head;
+    }
+};
+
+// Shorter solution using two pointers
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if (head == nullptr)
+            return nullptr;
+        ListNode* temp1 = head;
+        ListNode* temp2 = head->next;
+        ListNode* cp_nxt = temp2;
+        while (temp2 and temp2->next) {
+            temp1->next = temp1->next->next;
+            temp2->next = temp2->next->next;
+            temp1 = temp1->next;
+            temp2 = temp2->next;
+        }
+        temp1->next = cp_nxt;
         return head;
     }
 };
