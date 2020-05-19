@@ -34,6 +34,8 @@ The total time limit for this problem has been reduced by 75% for C++, and 50% f
 */
 
 
+
+// Using minimum Linear Scan Operation
 class StockSpanner {
 private:
     // stocks<price, index>
@@ -72,6 +74,34 @@ public:
         }
         ++index;
         return index - iter - 1;
+    }
+};
+
+/**
+ * Your StockSpanner object will be instantiated and called as such:
+ * StockSpanner* obj = new StockSpanner();
+ * int param_1 = obj->next(price);
+ */
+
+
+
+// Efficient Solution using stack
+class StockSpanner {
+private:
+    stack<pair<int, int>> stocks;
+public:
+    StockSpanner() {
+        
+    }
+    
+    int next(int price) {
+        int weight = 1;
+        while (!stocks.empty() and stocks.top().first <= price) {
+            weight += stocks.top().second;
+            stocks.pop();
+        }
+        stocks.push(make_pair(price, weight));
+        return weight;
     }
 };
 
