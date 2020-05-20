@@ -21,3 +21,4 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 17) Find All Anagrams in a String  
 * 18) Permutation in String  
 * 19) Online Stock Span  
+* 20) Kth Smallest Element in a BST   
