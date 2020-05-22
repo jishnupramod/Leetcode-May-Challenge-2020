@@ -22,4 +22,5 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 18) Permutation in String  
 * 19) Online Stock Span  
 * 20) Kth Smallest Element in a BST  
-* 21) Count Square Submatrices with All Ones   
+* 21) Count Square Submatrices with All Ones  
+* 22) Sort Characters By Frequency   
