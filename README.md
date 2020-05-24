@@ -24,4 +24,5 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 20) Kth Smallest Element in a BST  
 * 21) Count Square Submatrices with All Ones  
 * 22) Sort Characters By Frequency  
-* 23) Interval List Intersections   
+* 23) Interval List Intersections  
+* 24) Construct Binary Search Tree from Preorder Traversal    
