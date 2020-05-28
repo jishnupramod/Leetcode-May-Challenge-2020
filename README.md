@@ -28,5 +28,5 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 24) Construct Binary Search Tree from Preorder Traversal   
 * 25) Uncrossed Lines    
 * 26) < to be uploaded >
-* 27) < to be uploaded >
+* 27) Possible Bipartition  
 * 28) Counting Bits   
