@@ -29,4 +29,5 @@ The Solution repository of Leetcode May coding Challenge 2020
 * 25) Uncrossed Lines    
 * 26) < to be uploaded >
 * 27) Possible Bipartition  
-* 28) Counting Bits   
+* 28) Counting Bits  
+* 29) Course Schedule   
